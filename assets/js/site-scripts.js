@@ -4,8 +4,7 @@
 		new WOW().init();
 
 
-		$("#lightgalery").lightGallery({
-		});
+		$("#lightgalery").lightGallery({});
 
 		$('#left__lanuage__menu-link').click(function(){
 			if($('#left__lanuage__menu-look').css("display")=="flex"){
@@ -26,7 +25,7 @@
 			}
 		});
 
-		
+
 		$('#main-menu__link').click(function(){
 			if($('#main-menu__look').css("display")=="flex"){
 				$('#main-menu__look').css("display", "none");
@@ -44,7 +43,7 @@
 			$parent.toggleClass( 'menu_state_open' );
 		});
 
-		
+
 		$('#menu-color-link').click(function(){
 			if($('#menu-color-look').css("display")=="flex"){
 				$('#menu-color-look').css("display", "none");
@@ -54,30 +53,22 @@
 			}
 		});
 
-		
-		
+
+
 		///////// knopka button -top
 		$(window).scroll(function(){
 			if ($(this).scrollTop() > 100) {
 				$('.ui-to-top').fadeIn();
-			} 
+			}
 			else {
 				$('.ui-to-top').fadeOut();
 			}
 		});
-			 
+
 		$('.ui-to-top').click(function(){
 			$("html, body").animate({ scrollTop: 0 }, 600);
 			return false;
 		});
-		////////////
-
-
-			
-
-
-	
-
 			//////////код выравнивания блоков
 		$('www').each(function(){
         var highestBox = 0;
@@ -163,7 +154,7 @@
 		    }
 		}
 		////////////////slider
-		
+
 
 
 
@@ -171,27 +162,13 @@
 		    $('#largeImage').attr('src',$(this).attr('src').replace('thumb','large'));
 		    $('#description').html($(this).attr('alt'));
 		});
-		
-		 //$('.spritespin').spritespin({
-		     
-		     // source: SpriteSpin.sourceArray('/assets/images/item_{frame}.png', {
-		       // frame: [1,34],
-		       // digits: 3
-		     // }),
-		     // width: 480,
-		     // height: 327,
-		     // sense: -1
-		   //});
-
-
-
 
 		  	////////////// //scripr exchange img
-		   $('.js-hover').hover(function() {
+		$('.js-hover').hover(function() {
 			var _this = this,
 				images = _this.getAttribute('data').split(','),
 				counter = 0;
- 
+
 			this.setAttribute('data-src', this.src);
 			_this.timer = setInterval(function(){
 				if(counter > images.length) {
@@ -199,11 +176,11 @@
 				}
 				if (images[counter] != undefined) {
 					_this.src = images[counter];
-				} 
-	 
+				}
+
 				counter++;
 			}, 100);
- 
+
 			}, function() {
 				this.src = this.getAttribute('data-src');
 				clearInterval(this.timer);
@@ -247,6 +224,24 @@
         	});
 			////////////////////////////
 
+		 $('.spritespin').spritespin({
+          // generate an array of image urls.
+          // this is a helper function that takes a {frame} placeholder
+          source: SpriteSpin.sourceArray('./assets/images/360view/item_{frame}.png', {
+            // this ramge of numbers is interpolated into the {frame} placeholder
+            frame: [1,35],
+            // the frame placeholder will be padded with leading '0' up to the number of 'digits'
+            digits: 2
+          }),
+          // Specify the display width and height of the frame.
+          // Optionally the size of the container can be defined with CSS.
+          width: 583,
+          height: 583,
+          // Sense controls the direction and speed of the animation for mouse/touch interactions.
+          // Here a negative value is chosen to invert the rotation, so the animation 'follows' the drag direction.
+          // Values towards 0 will slow the animation down.
+          sense: -1
+        });
 
 	});// end ready
 
