@@ -6,25 +6,6 @@
 
 		$("#lightgalery").lightGallery({});
 
-		$('#left__lanuage__menu-link').click(function(){
-			if($('#left__lanuage__menu-look').css("display")=="flex"){
-				$('#left__lanuage__menu-look').css("display", "none");
-			}
-			else{
-				$('#left__lanuage__menu-look').css("display", "flex");
-			}
-		});
-
-
-		$('#left__usd__menu-link').click(function(){
-			if($('#left__usd__menu-look').css("display")=="flex"){
-				$('#left__usd__menu-look').css("display", "none");
-			}
-			else{
-				$('#left__usd__menu-look').css("display", "flex");
-			}
-		});
-
 
 		$('#main-menu__link').click(function(){
 			if($('#main-menu__look').css("display")=="flex"){
@@ -44,17 +25,7 @@
 		});
 
 
-		$('#menu-color-link').click(function(){
-			if($('#menu-color-look').css("display")=="flex"){
-				$('#menu-color-look').css("display", "none");
-			}
-			else{
-				$('#menu-color-look').css("display", "flex");
-			}
-		});
-
-
-
+		
 		///////// knopka button -top
 		$(window).scroll(function(){
 			if ($(this).scrollTop() > 100) {
@@ -69,16 +40,7 @@
 			$("html, body").animate({ scrollTop: 0 }, 600);
 			return false;
 		});
-			//////////код выравнивания блоков
-		$('www').each(function(){
-        var highestBox = 0;
-        $('.www ', this).each(function(){
-            if($(this).height() > highestBox) {
-                highestBox = $(this).height();
-            }
-        });
-       	$('.lwww ',this).height(highestBox);
-   		});
+	
 			//////////////////////slider
 		var slideNow = 1;
 		var slideCount = $('#slidewrapper').children().length;
@@ -157,13 +119,15 @@
 
 
 
-
+		/////////галерея мини 
 		$('#thumbs img').click(function(){
 		    $('#largeImage').attr('src',$(this).attr('src').replace('thumb','large'));
 		    $('#description').html($(this).attr('alt'));
 		});
+		////////////
 
-		  	////////////// //scripr exchange img
+
+		 ////////////// //scripr exchange img
 		$('.js-hover').hover(function() {
 			var _this = this,
 				images = _this.getAttribute('data').split(','),
@@ -224,6 +188,7 @@
         	});
 			////////////////////////////
 
+			/////////////360view
 		 $('.spritespin').spritespin({
           // generate an array of image urls.
           // this is a helper function that takes a {frame} placeholder
@@ -235,14 +200,62 @@
           }),
           // Specify the display width and height of the frame.
           // Optionally the size of the container can be defined with CSS.
-          width: 583,
-          height: 583,
+          width: 400,
+          height: 400,
           // Sense controls the direction and speed of the animation for mouse/touch interactions.
           // Here a negative value is chosen to invert the rotation, so the animation 'follows' the drag direction.
           // Values towards 0 will slow the animation down.
           sense: -1
         });
 
+		
+		////////////togle menu
+		var o = $('.toggle');
+			$(document).ready(function () {
+				$('.toggle').click(function (e) {
+					e.preventDefault();
+					var tmp = $(this);
+					o.each(function () {
+						if ($(this).hasClass('active') && !$(this).is(tmp)) {
+							$(this).parent().find('.toggle_cont').slideToggle();
+							$(this).removeClass('active');
+						}
+					});
+					$(this).toggleClass('active');
+					$(this).parent().find('.toggle_cont').slideToggle();
+		});
+		$(document).on('click touchstart', function (e) {
+			var container = $(".toggle-wrap");
+			var removeBtnWrap = $('#cart .btn-remove-wrap');
+			if (!container.is(e.target) && container.has(e.target).length === 0 && container.find('.toggle').hasClass('active')) { 
+				container.find('.active').toggleClass('active').parent().find('.toggle_cont').slideToggle();
+				if (removeBtnWrap.length > 0 ) {
+					removeBtnWrap.fadeOut();
+					}
+				}
+			});
+		});
+		///////////////////////
+	
+		window.onload=function(){
+		var menuElem = document.getElementById('dropdown-menu2'),
+		    titleElem = menuElem.querySelector('.title');
+		    document.onclick = function(event) {
+		    var target = elem = event.target;
+		    while (target != this) {
+		          if (target == menuElem) {
+		          if(elem.tagName == 'A') titleElem.innerHTML = elem.textContent;
+		          menuElem.classList.toggle('open')
+		              return;
+		          }
+		          target = target.parentNode;
+		      }
+		    menuElem.classList.remove('open');
+		}
+		}
+
+
+		
 	});// end ready
 
 })( jQuery );
