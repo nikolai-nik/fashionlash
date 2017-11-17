@@ -6,7 +6,7 @@
 
 		$("#lightgalery").lightGallery({});
 
-
+		//////////////MEGAMENU
 		$('#main-menu__link').click(function(){
 			if($('#main-menu__look').css("display")=="flex"){
 				$('#main-menu__look').css("display", "none");
@@ -23,7 +23,7 @@
 
 			$parent.toggleClass( 'menu_state_open' );
 		});
-
+		///////////////
 
 		
 		///////// knopka button -top
@@ -236,25 +236,8 @@
 			});
 		});
 		///////////////////////
-	
-		window.onload=function(){
-		var menuElem = document.getElementById('dropdown-menu2'),
-		    titleElem = menuElem.querySelector('.title');
-		    document.onclick = function(event) {
-		    var target = elem = event.target;
-		    while (target != this) {
-		          if (target == menuElem) {
-		          if(elem.tagName == 'A') titleElem.innerHTML = elem.textContent;
-		          menuElem.classList.toggle('open')
-		              return;
-		          }
-		          target = target.parentNode;
-		      }
-		    menuElem.classList.remove('open');
-		}
-		}
 
-
+		
 		
 	});// end ready
 
