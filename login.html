@@ -139,7 +139,7 @@
 					</div>
 			</header>
 			<main class="site-content" >
-				<section class="section section-check-in">
+				<section class="section section-login">
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
@@ -150,122 +150,41 @@
 									<li>
 										<i class="fa fa-chevron-right"></i>
 									</li>
-									<span>My Account</span>
+									<span>Account</span>
 									<li>
 										<i class="fa fa-chevron-right"></i>
 									</li>
-									<span>check in</span>
+									<span>Login</span>
 								</ul>
 							</div>
 							<div class="col-sm-12">
-								<div id="content" class="col-sm-12">    
-								 	<h1>Register Account</h1>
-								    <hr>
-								    <p>If you already have an account with us, please login at the <a href="#">login page</a>.</p>
-								    <fieldset id="account">
-								        <legend>Your Personal Details</legend>
-							          	<div class="form-group required">
-							            	<label class="col-sm-2 control-label" for="input-firstname">First Name</label>
-							           		<div class="col-sm-10">
-							              		<input type="text" name="firstname" value="" placeholder="First Name" id="input-firstname" class="form-control">
-							                </div>
-							          	</div>
-							         	 <div class="form-group required">
-							            	<label class="col-sm-2 control-label" for="input-lastname">Last Name</label>
-							            	<div class="col-sm-10">
-							              		<input type="text" name="lastname" value="" placeholder="Last Name" id="input-lastname" class="form-control">
-							                </div>
-							          	</div>
-							          	<div class="form-group required">
-							            	<label class="col-sm-2 control-label" for="input-email">E-Mail</label>
-							            	<div class="col-sm-10">
-							              		<input type="email" name="email" value="" placeholder="E-Mail" id="input-email" class="form-control">
-							                </div>
-							          	</div>
-							          	<div class="form-group required">
-							            	<label class="col-sm-2 control-label" for="input-telephone">Telephone</label>
-							            	<div class="col-sm-10">
-							             		 <input type="tel" name="telephone" value="" placeholder="Telephone" id="input-telephone" class="form-control">
-							                </div>
-							          	</div>
-							          	<div class="form-group">
-							            	<label class="col-sm-2 control-label control-label-fax" for="input-fax">Fax</label>
-							            	<div class="col-sm-10">
-							              		<input type="text" name="fax" value="" placeholder="Fax" id="input-fax" class="form-control">
-							            	</div>
-							          	</div>
-							        </fieldset>
-								    <fieldset id="address">
-								        <legend>Your Address</legend>
-								          	<div class="form-group">
-								            	<label class="col-sm-2 control-label control-label-company" for="input-company">Company</label>
-								            	<div class="col-sm-10">
-								              		<input type="text" name="company" value="" placeholder="Company" id="	input-company" class="form-control">
-								            	</div>
-								          	</div>
-								          	<div class="form-group required">
-								            	<label class="col-sm-2 control-label" for="input-address-1">Address 1</label>
-								            	<div class="col-sm-10">
-								             	 	<input type="text" name="address_1" value="" placeholder="Address 1" id="input-address-1" class="form-control">
-								                </div>
-								          	</div>
-								          	<div class="form-group">
-								            	<label class="col-sm-2 control-label control-label-address-2" for="input-address-2">Address 2</label>
-								            	<div class="col-sm-10">
-								              		<input type="text" name="address_2" value="" placeholder="Address 2" id="input-address-2" class="form-control">
-								            	</div>
-								          	</div>
-								          	<div class="form-group required">
-								            	<label class="col-sm-2 control-label" for="input-city">City</label>
-								            	<div class="col-sm-10">
-								             		 <input type="text" name="city" value="" placeholder="City" id="input-city" class="form-control">
-						                        </div>
-								          	</div>
-								          	<div class="form-group required">
-								            	<label class="col-sm-2 control-label" for="input-postcode">Post Code</label>
-								            	<div class="col-sm-10">
-								             		 <input type="text" name="postcode" value="" placeholder="Post Code" id="input-postcode" class="form-control">
-					                          	</div>
-							          		</div>
-					          		</fieldset>
-							        <fieldset>
-							          	<legend>Your Password</legend>
-							          	<div class="form-group required">
-								            <label class="col-sm-2 control-label" for="input-password">Password</label>
-								            <div class="col-sm-10">
-								              	<input type="password" name="password" value="" placeholder="Password" id="input-password" class="form-control">
-				                          	</div>
-							          	</div>
-							          	<div class="form-group required">
-								            <label class="col-sm-2 control-label" for="input-confirm">Password Confirm</label>
-								            <div class="col-sm-10">
-								              	<input type="password" name="confirm" value="" placeholder="Password Confirm" id="input-confirm" class="form-control">
-				                          	</div>
-							          	</div>
-							        </fieldset>
-							        <fieldset>
-							          	<legend>Newsletter</legend>
-							          	<div class="form-group">
-								            <label class="col-sm-2 control-label control-label-subscribe">Subscribe</label>
-								            <div class="col-sm-10">
-					                            <input type="radio" name="newsletter" value="1" id="newsletter1">
-					                            <label class="radio-inline" for="newsletter1">
-								                Yes</label>
-								              	<input type="radio" name="newsletter" value="0" checked="checked" id="newsletter0">
-								              	<label class="radio-inline" for="newsletter0">No</label>
-				                          	</div>
-							          	</div>
-							        </fieldset>
-			                        <div class="buttons">
-							          	<div class="pull-right">I have read and agree to the 
-							          		<a href="#" class="agree">
-							          		<b>Privacy Policy</b></a>                        
-							          		<input type="checkbox" name="agree" value="1" id="agree1">
-							          		<label for="agree1"></label> &nbsp;
-								            <a href="#" class="button button-primary button--border-thin button--text-thick">Continue</a>
-							        	</div>
-						          	</div>
-						        </div>
+								<div id="content" class="row">
+									<div class="col-sm-6">
+										<div class="customer">
+											<h1>new customer</h1>
+											<h4>Register account</h4>
+											<p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
+											<a href="#" class="button button-primary button--border-thin button--text-thick">Continue</a>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="customer">
+											<h1>Returning Customer</h1>
+											<h4>I am returning customer</h4>
+											<div class="form-group">
+								            	<label class="control-label" for="input-email">E-Mail Address</label>
+							              		<input type="email" name="email" value="" placeholder="E-Mail Address" id="input-email" class="form-control">
+						              		</div>
+						              		<div class="form-group">
+							              		<label class="col-sm-2 control-label" for="input-password">Password</label>
+							              		<input type="password" name="password" value="" placeholder="Password" id="input-password" class="form-control">
+							              		
+							              	</div>
+							              	<a href="#" class="forgotten">Forgotten Password</a>
+							              	<a href="#" class="button button-primary button--border-thin button--text-thick">Continue</a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
