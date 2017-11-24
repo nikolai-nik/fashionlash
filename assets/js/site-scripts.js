@@ -236,7 +236,49 @@
 			});
 		});
 		///////////////////////
+		$('#grid-view').click(function() {
+			// What a shame bootstrap does not take into account dynamically loaded columns
+			var cols = $('#column-right, #column-left').length;
+			$(this).addClass('active');
+			$('#list-view').removeClass('active');
+			if (cols == 2) {
+				$('#product-content .product-list').attr('class', 'product-layout product-grid col-lg-6 col-md-6 col-sm-12 col-xs-12');
+			} else if (cols == 1) {
+				$('#product-content .product-list').attr('class', 'product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12');
+			} else {
+				$('#product-content .product-list').attr('class', 'product-layout product-grid  col-lg-4 col-md-4 col-sm-6 col-xs-12');
+			}
 
+			
+		});
+		
+
+		// Product List
+		$('#list-view').click(function() {
+			$('#product-content .product-grid > .clearfix').remove();
+			$(this).addClass('active');
+			$('#grid-view').removeClass('active');
+			$('#product-content .product-layout').attr('class', 'product-layout product-list col-xs-12');
+
+			
+		});
+		//////////////// Pagination
+		$("div.holder").jPages({
+	      containerID : "product-itemContainer",
+	      perPage : 3
+	    });
+
+	    /* on select change */
+	    $("select").change(function(){
+	      /* get new nº of items per page */
+	      var newPerPage = parseInt( $(this).val() );
+
+	      /* destroy jPages and initiate plugin again */
+	      $("div.holder").jPages("destroy").jPages({
+	        containerID   : "product-itemContainer",
+	        perPage       : newPerPage
+	      });
+	    });
 		
 		
 	});// end ready
