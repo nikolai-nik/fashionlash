@@ -132,7 +132,7 @@
 			var _this = this,
 				images = _this.getAttribute('data').split(','),
 				counter = 0;
-
+ 
 			this.setAttribute('data-src', this.src);
 			_this.timer = setInterval(function(){
 				if(counter > images.length) {
